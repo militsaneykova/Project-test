@@ -17,12 +17,12 @@ const NavBar = () => {
             <ul className='navMenu'>
                 {/* On every click on menu item, a line will uppear under it */}
                 <li onClick={()=>{setMenu('home')}}><Link to ='/'>Home</Link>{menu==='home'?<hr/>:<></>}</li>
-                <li onClick={()=>{setMenu('home')}}><Link to ='/About'>About</Link> {menu==='about'?<hr/>:<></>}</li>
+                <li onClick={()=>{setMenu('about')}}><Link to ='/About'>About</Link> {menu==='about'?<hr/>:<></>}</li>
                 <li onClick={()=>{setMenu('tours')}}><Link to ='/AdditionalTours'>AdditionalTours</Link>{menu==='tours'?<h/>:<></>}</li>
             </ul>
             <div className='login'>
-                <img className = 'shopping-cart' src='https://static.vecteezy.com/system/resources/previews/000/356/583/original/vector-shopping-cart-icon.jpg'></img>
-                <button>Log in</button>
+                <Link to='/cart'><img className = 'shopping-cart' src='https://static.vecteezy.com/system/resources/previews/000/356/583/original/vector-shopping-cart-icon.jpg'></img></Link>
+                <Link to ='login'><button>Log in</button></Link>
             </div>
         </div>
     )
