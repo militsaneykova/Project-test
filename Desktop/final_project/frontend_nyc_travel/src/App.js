@@ -1,10 +1,12 @@
 
 import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import NavBar from './Components/NavBar';
-import Home from './Pages/Home';
-import AdditionalTours from './Pages/AdditionalTours';
-import About from './Pages/About';
+import NavBar from './components/NavBar';
+import Home from './pages/Home';
+import AdditionalTours from './pages/AdditionalTours';
+import About from './pages/About';
+import Cart from './pages/Cart';
+import  LoginSignup from './pages/LoginSignup';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/additional-tours' element={<AdditionalTours/>}></Route>
             <Route path=':/tourId' element={<About/>}></Route>
+          <Route path='/cart' element={<Cart/>}></Route>
+          <Route path='/login' element={<LoginSignup/>}></Route>
         </Routes>      
       </BrowserRouter>
     </div>
