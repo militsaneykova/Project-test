@@ -18,9 +18,9 @@ const TourData = () => {
     },[])
     return (
         <div className='homePage'>
-            <p>{tourData.tour_name}</p>
+            {/* <p>{tourData.tour_name}</p>
             <p>{tourData.description}</p>
-            <p>{tourData.price}</p>
+            <p>{tourData.price}</p> */}
             {/* {tourData.maps(tour =>{
                 <div className="tourData">
                     <>{tour.description}</>
