@@ -2,6 +2,9 @@
 import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import NavBar from './Components/NavBar';
+import Home from './Pages/Home';
+import AdditionalTours from './Pages/AdditionalTours';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -10,9 +13,10 @@ function App() {
       <BrowserRouter>
         <NavBar></NavBar>,
         <Routes>
-          <Route>
-
-          </Route>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/about' element={<About/>}></Route>
+          <Route path='/additional-tours' element={<AdditionalTours/>}></Route>
+            <Route path=':/tourId' element={<About/>}></Route>
         </Routes>      
       </BrowserRouter>
     </div>
