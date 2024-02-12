@@ -29,6 +29,7 @@ function TourDetails() {
         <>
             <h3>Tour details</h3>
             <h4>{tour.tour_name}</h4>
+            
         </>
       )}
     </div>
