@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useRef, useState, useContext } from "react";
-import { UserContext } from "../context/UserContext";
+//import { UserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
+export default LoginSignup;
 
-
-function LoginSignup({ setUser }) {
+function LoginSignup({ setMember }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,13 +20,47 @@ function LoginSignup({ setUser }) {
         email,
         password,
       });
+      
       console.log(res.data);
-      setUser(res.data);
+      setMember(res.data);
+    
     } catch (error) {
       
     }
+    
     console.log("Logged In");
   };
+
+//////////Chalmata///////////////////////
+//     try {
+//           const res = await axios.get('http://localhost:4000/api/members', {
+//             email,
+//             password,
+//           });
+//     console.log(res?.data);
+
+//     if (res.data?.member?._id) {
+//       localStorage.setItem("member", JSON.stringify(res.data?.member));
+//       setMember(res.data?.member);
+
+//       // taking the user id from the response and redirecting them to the profile page
+//       // window.location.href = `/profile/${response.data.user._id}`;
+//       navigate("/memberPage");
+//     } else {
+//       console.error("Failed to login");
+//       alert("Incorrect Email or Password.");
+//     }
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// };
+
+
+
+
+
+
+
 
   return (
     <div>
@@ -53,5 +90,3 @@ function LoginSignup({ setUser }) {
     </div>
   );
 }
-
-export default LoginSignup;
